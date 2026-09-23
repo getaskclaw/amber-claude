@@ -19,9 +19,9 @@ Benchmarking **Anthropic Claude** models against the private **AMBER** suite —
 
 ## Latest results
 
-- **2026-W39** — claude-opus-5-5 first full-library run, 17 pass · 6 fail · 1 contested: [full report](results/2026-W39.en.md)（[中文](results/2026-W39.md)）
+- **2026-W39** — claude-opus-5-5 first full-library run, **17'/24** (`'` = one contested case scored NA; in full: 17 pass · 6 fail · 1 contested): [full report](results/2026-W39.en.md)（[中文](results/2026-W39.md)）
 
-![2026-W39 board](results/assets/2026-W39-board.en.png)
+![Ten-axis completion profile: claude-opus-5-5 vs k3](results/assets/2026-W39-radar.en.png)
 
 ## Publication rules (hard lines)
 

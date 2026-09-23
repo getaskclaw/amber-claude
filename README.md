@@ -19,9 +19,9 @@ English: [README.en.md](README.en.md)
 
 ## 最新成绩
 
-- **2026-W39** — claude-opus-5-5 全库首考 17 胜 · 6 负 · 1 悬：[正刊](results/2026-W39.md)（[English](results/2026-W39.en.md)）
+- **2026-W39** — claude-opus-5-5 全库首考 **17'/24**（`'` = 有悬案不计胜负；写全 = 17 胜 · 6 负 · 1 悬）：[正刊](results/2026-W39.md)（[English](results/2026-W39.en.md)）
 
-![2026-W39 榜单构成](results/assets/2026-W39-board.zh.png)
+![十轴完成度画像：claude-opus-5-5 vs k3](results/assets/2026-W39-radar.zh.png)
 
 ## 发布纪律（红线）
 

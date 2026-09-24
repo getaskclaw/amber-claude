@@ -3,7 +3,7 @@
 用私有题库 **AMBER** 实测 Anthropic Claude 系列模型，只公开结果，不公开题目。
 English: [README.en.md](README.en.md)
 
-> **一句话**：我们给 AI 模型出「真实工作考卷」——修 bug、查事故原因、看系统截图挑毛病、真上手运维——这个仓放 **Anthropic Claude 模型**的成绩单。最新一期：Claude Opus 5.5 发布当天首考，24 案过 17 案（案 = 一道题）；另有 1 案它已经把事故原因答对了，却突然触发安全拒答——按规矩这案记「悬案」，不算赢也不算输。
+> **一句话**：这里是 Anthropic Claude 的 AMBER 成绩单。案 = 一道计分任务。claude-opus-5-5 的 W39 记录为 17 胜 · 6 负 · 1 案考场(harness)基建 NA：原卷未落盘，零流量闸误判。拒答观察仅留诊断附注；owner 已签撤回安全边界部署建议。见 [更正](results/2026-W39-correction.md)。
 
 ## 这是什么
 
@@ -19,9 +19,9 @@ English: [README.en.md](README.en.md)
 
 ## 最新成绩
 
-- **2026-W39** — claude-opus-5-5 全库首考 **17'/24**（`'` = 有悬案不计胜负；写全 = 17 胜 · 6 负 · 1 悬）：[正刊](results/2026-W39.md)（[English](results/2026-W39.en.md)）
+- **2026-W39** — claude-opus-5-5 **17'/24**：17 胜 · 6 负 · 1 案基建作废。' = contested（安全拒答挂起）或 invalid（基建相关（考场 harness 或判分环境）的挂起、作废或待重评），均不计胜负；所有含 NA 的道都带撇号，包括冻结展示行；挂起不表示死因已定。见 [更正](results/2026-W39-correction.md) · [原刊](results/2026-W39.md)。
 
-![十轴完成度画像：claude-opus-5-5 vs k3](results/assets/2026-W39-radar.zh.png)
+![十轴完成度画像：claude-opus-5-5 vs k3](results/assets/2026-W39-radar-correction.zh.png?v=corrections-20260924-r2)
 
 ## 发布纪律（红线）
 

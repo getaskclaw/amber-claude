@@ -3,7 +3,7 @@
 Benchmarking **Anthropic Claude** models against the private **AMBER** suite — results only, never the questions.
 中文: [README.md](README.md)
 
-> **In one line**: we hand AI models real work — fix a bug, find a root cause, review a system screenshot, operate a live system — and this repo holds the report cards for **Anthropic Claude** models. Latest issue: Claude Opus 5.5, tested on its launch day, passed 17 of 24 tasks; on one more task it found the right root cause and then refused to finish the answer — by our rules that task is "contested", not a win and not a loss.
+> **In one line**: this repo holds AMBER report cards for Anthropic Claude. A case is one scored task. claude-opus-5-5 in W39: 17 wins · 6 losses · 1 test-harness infrastructure NA. The original answer was not saved; the zero-traffic gate misclassified the attempt. The refusal observation remains a diagnostic note only; the owner has withdrawn the safety-boundary deployment advice. [Correction](results/2026-W39-correction.en.md).
 
 ## What this is
 
@@ -19,9 +19,9 @@ Benchmarking **Anthropic Claude** models against the private **AMBER** suite —
 
 ## Latest results
 
-- **2026-W39** — claude-opus-5-5 first full-library run, **17'/24** (`'` = one contested case scored NA; in full: 17 pass · 6 fail · 1 contested): [full report](results/2026-W39.en.md)（[中文](results/2026-W39.md)）
+- **2026-W39** — claude-opus-5-5 **17'/24**: 17 wins · 6 losses · 1 case void due to infrastructure. ' = contested (held for safety refusal) or invalid (infrastructure-related (test harness or scoring environment) cases: held, void or awaiting re-scoring); neither counts as a win or a loss. Every lane with NA carries an apostrophe, including frozen display rows; a hold does not settle the cause. [Correction](results/2026-W39-correction.en.md) · [original report](results/2026-W39.en.md).
 
-![Ten-axis completion profile: claude-opus-5-5 vs k3](results/assets/2026-W39-radar.en.png)
+![Ten-axis completion profile: claude-opus-5-5 vs k3](results/assets/2026-W39-radar-correction.en.png?v=corrections-20260924-r2)
 
 ## Publication rules (hard lines)
 

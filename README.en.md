@@ -3,7 +3,7 @@
 Benchmarking **Anthropic Claude** models against the private **AMBER** suite — results only, never the questions.
 中文: [README.md](README.md)
 
-> **In one line**: this repo holds AMBER report cards for Anthropic Claude. A case is one scored task. claude-opus-5-5 in W39: 17 wins · 6 losses · 1 test-harness infrastructure NA. The original answer was not saved; the zero-traffic gate misclassified the attempt. The refusal observation remains a diagnostic note only; the owner has withdrawn the safety-boundary deployment advice. [Correction](results/2026-W39-correction.en.md).
+> **In one line**: this repo holds AMBER report cards for Anthropic Claude. A case is one scored task. claude-sonnet-5-5's first sitting in W40 scored **19/24** (19 wins · 5 losses · 0 NA), tying the top total. claude-opus-5-5 in W39: 17 wins · 6 losses · 1 test-harness infrastructure NA. The original answer was not saved; the zero-traffic gate misclassified the attempt. The refusal observation remains a diagnostic note only; the owner has withdrawn the safety-boundary deployment advice. [Correction](results/2026-W39-correction.en.md).
 
 ## What this is
 
@@ -19,6 +19,7 @@ Benchmarking **Anthropic Claude** models against the private **AMBER** suite —
 
 ## Latest results
 
+- **2026-W40** — claude-sonnet-5-5 **19/24**: 19 wins · 5 losses · 0 NA. Full marks on build and ops; weak spots are review and verification. See [the issue](results/2026-W40.en.md).
 - **2026-W39** — claude-opus-5-5 **17'/24**: 17 wins · 6 losses · 1 case void due to infrastructure. ' = contested (held for safety refusal) or invalid (infrastructure-related (test harness or scoring environment) cases: held, void or awaiting re-scoring); neither counts as a win or a loss. Every lane with NA carries an apostrophe, including frozen display rows; a hold does not settle the cause. [Correction](results/2026-W39-correction.en.md) · [original report](results/2026-W39.en.md).
 
 ![Ten-axis completion profile: claude-opus-5-5 vs k3](results/assets/2026-W39-radar-correction.en.png?v=corrections-20260924-r2)

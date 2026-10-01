@@ -3,7 +3,7 @@
 用私有题库 **AMBER** 实测 Anthropic Claude 系列模型，只公开结果，不公开题目。
 English: [README.en.md](README.en.md)
 
-> **一句话**：这里是 Anthropic Claude 的 AMBER 成绩单。案 = 一道计分任务。claude-opus-5-5 的 W39 记录为 17 胜 · 6 负 · 1 案考场(harness)基建 NA：原卷未落盘，零流量闸误判。拒答观察仅留诊断附注；owner 已签撤回安全边界部署建议。见 [更正](results/2026-W39-correction.md)。
+> **一句话**：这里是 Anthropic Claude 的 AMBER 成绩单。案 = 一道计分任务。claude-sonnet-5-5 的 W40 首考为 **19/24**（19 胜 · 5 负 · 0 NA），与当前最高分同分。claude-opus-5-5 的 W39 记录为 17 胜 · 6 负 · 1 案考场(harness)基建 NA：原卷未落盘，零流量闸误判。拒答观察仅留诊断附注；owner 已签撤回安全边界部署建议。见 [更正](results/2026-W39-correction.md)。
 
 ## 这是什么
 
@@ -19,6 +19,7 @@ English: [README.en.md](README.en.md)
 
 ## 最新成绩
 
+- **2026-W40** — claude-sonnet-5-5 **19/24**：19 胜 · 5 负 · 0 NA。施工、运维全满，短板在审查与核验。见 [期文](results/2026-W40.md)。
 - **2026-W39** — claude-opus-5-5 **17'/24**：17 胜 · 6 负 · 1 案基建作废。' = contested（安全拒答挂起）或 invalid（基建相关（考场 harness 或判分环境）的挂起、作废或待重评），均不计胜负；所有含 NA 的道都带撇号，包括冻结展示行；挂起不表示死因已定。见 [更正](results/2026-W39-correction.md) · [原刊](results/2026-W39.md)。
 
 ![十轴完成度画像：claude-opus-5-5 vs k3](results/assets/2026-W39-radar-correction.zh.png?v=corrections-20260924-r2)

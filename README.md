@@ -1,9 +1,11 @@
 # amber-claude
 
+> ⚠️ **更正（2026-10-02，另一项）**：防御轴的一案 A-d511f9e8 在所有车道上改记 NA（考场判的不是考生交付的文件，判分还要求了题面没写的事）。分母不变，**过案数不变**，每条道的总分都带 `'`。本仓各期成绩表里这一格请按 NA 读，其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.md)为准。
+
 用私有题库 **AMBER** 实测 Anthropic Claude 系列模型，只公开结果，不公开题目。
 English: [README.en.md](README.en.md)
 
-> **一句话**：这里是 Anthropic Claude 的 AMBER 成绩单。案 = 一道计分任务。W40 有三个型号：claude-sonnet-5-5 **19/24**（19 胜 · 5 负 · 0 NA），claude-opus-5-5 重考 **19'/24**（W39 首考为 17'/24，两场并列看，不据此判断强弱），claude-fable-5-1 **16'/24**。三者的失分主要在防御、归因、审查三轴，逐轴见下表。
+> **一句话**：这里是 Anthropic Claude 的 AMBER 成绩单。案 = 一道计分任务。W40 有三个型号：claude-sonnet-5-5 **19'/24**（19 胜 · 4 负 · 1 NA），claude-opus-5-5 重考 **19'/24**（W39 首考为 17'/24，两场并列看，不据此判断强弱），claude-fable-5-1 **16'/24**。三者的失分主要在防御、归因、审查三轴，逐轴见下表。
 >
 > **更正**：claude-opus-5-5 的 W39 记录为 17 胜 · 6 负 · 1 案考场(harness)基建 NA：原卷未落盘，零流量闸误判。拒答观察仅留诊断附注；owner 已签撤回安全边界部署建议。见 [更正](results/2026-W39-correction.md)。
 
@@ -11,7 +13,7 @@ English: [README.en.md](README.en.md)
 
 <!-- scoreboard:start -->
 
-![amber-claude 成绩一览：claude-opus-5-5、claude-sonnet-5-5、claude-fable-5-1 逐轴过案数](results/assets/scoreboard.zh.png?v=20261002b)
+![amber-claude 成绩一览：claude-opus-5-5、claude-sonnet-5-5、claude-fable-5-1 逐轴过案数](results/assets/scoreboard.zh.png?v=20261002c)
 
 | 大类 | 轴 | 考什么 | claude-opus-5-5 · [W40](results/2026-W40.md) | claude-sonnet-5-5 · [W40](results/2026-W40.md) | claude-fable-5-1 · [W40](results/2026-W40.md) |
 |---|---|---|:-:|:-:|:-:|
@@ -22,13 +24,13 @@ English: [README.en.md](README.en.md)
 |  | 收敛 | 真干完，不绕圈装忙 | 1/1 | 1/1 | 1/1 |
 | 判断面 | UI | 照设计稿做页面 | 1/1 | 1/1 | 0/1 · 1 NA |
 |  | 视觉 | 给真截图挑毛病 | 1/1 | 1/1 | 1/1 |
-|  | 防御 | 堵死校验器的漏网口 | 0/2 · 1 NA | 0/2 | 0/2 · 1 NA |
+|  | 防御 | 堵死校验器的漏网口 | 0/2 · 2 NA | 0/2 · 1 NA | 0/2 · 2 NA |
 |  | 归因 | 毛病对到正确根因 | 0/1 · 1 NA | 0/1 | 0/1 |
 |  | 审查 | 给别人的交付物挑错 | 1/2 | 0/2 | 0/2 |
-|  | **合计** |  | **19'/24** | **19/24** | **16'/24** |
+|  | **合计** |  | **19'/24** | **19'/24** | **16'/24** |
 
 - **都拿满**：交付、需求、收敛、视觉。
-- **都没过**：防御 0/2 · 1 NA、归因 0/1 · 1 NA。
+- **都没过**：防御 0/2 · 2 NA、归因 0/1 · 1 NA。
 - **有差别**：编码 5/6 对 6/6 对 5/6、运维 6/6 对 6/6 对 5/6、UI 1/1 对 1/1 对 0/1 · 1 NA、审查 1/2 对 0/2 对 0/2。
 
 每格 = 通过案数/该轴案数。NA = 作废或挂起的案，不计胜负；总分带 `'` 表示含 NA。多数轴只有 1–2 案，一案就能改变该轴读数。各列考试周次相同（W40），具体日期可能不同，数字是当期快照。
@@ -49,7 +51,7 @@ English: [README.en.md](README.en.md)
 
 ## 各期成绩
 
-- **2026-W40** — claude-sonnet-5-5 **19/24**（19 胜 · 5 负 · 0 NA）· claude-opus-5-5 重考 **19'/24**（19 胜 · 3 负 · 2 NA；W39 为 17'/24）· claude-fable-5-1 **16'/24**（16 胜 · 6 负 · 2 NA）。施工面都强，防御、归因、审查是共同短板。本期的 NA 有两种：两次作答都撞考场时间上限（按当时成文规则记 NA，不计负），以及题面与考场不一致而挂起（Fable 的一案，待题面修好后重考）。见 [期文](results/2026-W40.md)。
+- **2026-W40** — claude-sonnet-5-5 **19'/24**（19 胜 · 4 负 · 1 NA）· claude-opus-5-5 重考 **19'/24**（19 胜 · 2 负 · 3 NA；W39 为 17'/24）· claude-fable-5-1 **16'/24**（16 胜 · 5 负 · 3 NA）。施工面都强，防御、归因、审查是共同短板。本期的 NA 有三种：防御案 A-d511f9e8 在所有车道上改记 NA（见[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.md)）；两次作答都撞考场时间上限（按当时成文规则记 NA，不计负），以及题面与考场不一致而挂起（Fable 的一案，待题面修好后重考）。见 [期文](results/2026-W40.md)。
 - **2026-W39** — claude-opus-5-5 **17'/24**：17 胜 · 6 负 · 1 案基建作废。' = contested（安全拒答挂起）或 invalid（基建相关（考场 harness 或判分环境）的挂起、作废或待重评），均不计胜负；所有含 NA 的道都带撇号，包括冻结展示行；挂起不表示死因已定。见 [更正](results/2026-W39-correction.md) · [原刊](results/2026-W39.md)。
 
 W39 的十轴完成度画像（claude-opus-5-5 对 k3）在 [更正](results/2026-W39-correction.md) 页内。

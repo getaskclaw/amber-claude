@@ -1,87 +1,88 @@
+[简体中文](README.zh-CN.md) · English
+
 # amber-claude
 
-> ⚠️ **更正（2026-10-02，另一项）**：防御轴的一案 A-d511f9e8 在所有车道上改记 NA（考场判的不是考生交付的文件，判分还要求了题面没写的事）。分母不变，**过案数不变**，每条道的总分都带 `'`。本仓各期成绩表里这一格请按 NA 读，其余内容保留原样，以[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.md)为准。
+> ⚠️ **Correction (2026-10-02, second)**: one defense-axis case, A-d511f9e8, is now NA on every lane (the exam room did not grade the file the candidate delivered, and the grader asks for something the task text does not say). The denominator and the **number of passed cases do not change**; every lane's total now carries `'`. In this repo's issue tables, read that cell as NA. Everything else stays as published; the [correction notice](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.en.md) governs.
 
-> **2026-10-07 更新**：claude-fable-5-1 的品牌题 A-d9b79b46（UI）由 NA（挂起）改记为负：2026-10-07 该案题面修改后，只重考了这一格，判分器 11/12，未过。过案数不变（16），负案 5→6，NA 3→2，总分仍是 16'/24。claude-opus-5-5 和 claude-sonnet-5-5 这一案的格子是旧题面下的成绩，不变。见 [2026-W40 期文](results/2026-W40.md)。
+> **2026-10-07 update**: claude-fable-5-1's brand case A-d9b79b46 (UI) changes from NA (held) to a loss: after the question text of that case was revised on 2026-10-07, only this one cell was re-taken, and the grader scored 11/12, a fail. The pass count is unchanged (16); losses go 5→6 and NA 3→2, so the total is still 16'/24. The cells of claude-opus-5-5 and claude-sonnet-5-5 for this case were taken on the old question text and do not change. See the [2026-W40 issue](results/2026-W40.en.md).
 
-> **2026-10-07 更新（第二次）**：运维案 A-24bcf707：判分器要求被指的移除提交在功能自身的文件上有删除行，题面没有写这个要求；claude-fable-5-1 只挂了这一项检查，这一格由负改记 NA（挂起）。过案数不变（16），负案 6→5，NA 2→3，总分仍是 16'/24；运维轴 5/6 · 1 NA。Opus、Sonnet 这一案的格子是过，不变。见[规范仓 2026-10-07 的更正](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.md)和 [2026-W40 期文](results/2026-W40.md)。
+> **2026-10-07 update (second)**: ops case A-24bcf707: the grader required the named removal commit to have deleted lines inside the feature's own files, which the prompt does not state; claude-fable-5-1 failed only that check, so the cell changes from a loss to NA (held). The pass count is unchanged (16); losses go 6→5 and NA 2→3, so the total is still 16'/24; the ops axis is 5/6 · 1 NA. The cells of Opus and Sonnet for this case are passes and do not change. See the [amber spec repo correction of 2026-10-07](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.en.md) and the [2026-W40 issue](results/2026-W40.en.md).
 
-给 Anthropic 的 Claude 模型做同一套**私有**实战考试（题库叫 **AMBER**，共 24 道题）。只公开结果，不公开题目。
-English: [README.en.md](README.en.md)
+We give Anthropic's Claude models the same **private**, real-work exam (a question bank called **AMBER**, 24 tasks). Only results are public, never the questions.
 
-> **一句话**：三个 Claude 模型各做一遍 24 道实战题（写代码、做运维、挑别人的错等），过题数是 **claude-sonnet-5-5 19'/24 · claude-opus-5-5 19'/24 · claude-fable-5-1 16'/24**。动手干活的题（写代码、运维、交付）基本都过；丢分主要在防御、归因、审查这三类判断题。claude-fable-5-1 的品牌题 2026-10-07 题面修改后重考，改记负；运维案 A-24bcf707 因判分器比题面严改记 NA（挂起）；过案数都不变。
+> **In one line**: three Claude models each took the same 24 real-work tasks (writing code, running ops, spotting flaws in someone else's work, and more). Tasks passed: **claude-sonnet-5-5 19'/24 · claude-opus-5-5 19'/24 · claude-fable-5-1 16'/24**. They pass most of the hands-on tasks (coding, ops, delivery) and lose most of their points on three judgment tasks: defense, attribution and review. claude-fable-5-1's brand case was re-taken on 2026-10-07 after the question text was revised and now counts as a loss; its pass count is unchanged. Its ops case A-24bcf707 is NA (held), because the grader's removal-commit check was stricter than the prompt; this does not change the pass count either.
 >
-> 分数后的 `'` 表示其中有几题暂不计分（NA），既不算过也不算没过，原因见下。claude-opus-5-5 是重考，W39 首考是 17'/24；两次并列看，不据此判断它变强或变弱。
+> A `'` after a score means some tasks are not scored for now (NA): neither a pass nor a fail; reasons below. claude-opus-5-5 is a re-test; its first test in W39 was 17'/24. Read the two side by side; they do not show it got stronger or weaker.
 >
-> **更正**：claude-opus-5-5 的 W39 记录为 17 胜 · 6 负 · 1 案考场(harness)基建 NA：原卷未落盘，零流量闸误判。拒答观察仅留诊断附注；owner 已签撤回安全边界部署建议。见 [更正](results/2026-W39-correction.md)。
+> **Correction**: claude-opus-5-5 in W39: 17 wins · 6 losses · 1 test-harness infrastructure NA. The original answer was not saved; the zero-traffic gate misclassified the attempt. The refusal observation remains a diagnostic note only; the owner has withdrawn the safety-boundary deployment advice. [Correction](results/2026-W39-correction.en.md).
 
-## 成绩一览
+## Scoreboard
 
 <!-- scoreboard:start -->
 
-![amber-claude 成绩一览：claude-opus-5-5、claude-sonnet-5-5、claude-fable-5-1 逐轴过案数](results/assets/scoreboard.zh.png?v=20261007b)
+![amber-claude scoreboard: cases passed per axis for claude-opus-5-5, claude-sonnet-5-5, claude-fable-5-1](results/assets/scoreboard.en.png?v=20261007b)
 
-| 大类 | 轴 | 考什么 | claude-opus-5-5 · [W40](results/2026-W40.md) | claude-sonnet-5-5 · [W40](results/2026-W40.md) | claude-fable-5-1 · [W40](results/2026-W40.md) |
+| Group | Axis | What it tests | claude-opus-5-5 · [W40](results/2026-W40.en.md) | claude-sonnet-5-5 · [W40](results/2026-W40.en.md) | claude-fable-5-1 · [W40](results/2026-W40.en.md) |
 |---|---|---|:-:|:-:|:-:|
-| 施工面 | 编码 | 照着需求把功能写对 | 5/6 | 6/6 | 5/6 |
-|  | 交付 | 做完还得交得出东西 | 3/3 | 3/3 | 3/3 |
-|  | 运维 | 照规程干脏活 | 6/6 | 6/6 | 5/6 · 1 NA |
-|  | 需求 | 客户要 A 不要 B | 1/1 | 1/1 | 1/1 |
-|  | 收敛 | 真干完，不绕圈装忙 | 1/1 | 1/1 | 1/1 |
-| 判断面 | UI | 照设计稿做页面 | 1/1 | 1/1 | 0/1 |
-|  | 视觉 | 给真截图挑毛病 | 1/1 | 1/1 | 1/1 |
-|  | 防御 | 堵死校验器的漏网口 | 0/2 · 2 NA | 0/2 · 1 NA | 0/2 · 2 NA |
-|  | 归因 | 毛病对到正确根因 | 0/1 · 1 NA | 0/1 | 0/1 |
-|  | 审查 | 给别人的交付物挑错 | 1/2 | 0/2 | 0/2 |
-|  | **合计** |  | **19'/24** | **19'/24** | **16'/24** |
+| Building | Coding | Implement the spec correctly | 5/6 | 6/6 | 5/6 |
+|  | Delivery | Done means handed in | 3/3 | 3/3 | 3/3 |
+|  | Ops | Follow the runbook | 6/6 | 6/6 | 5/6 · 1 NA |
+|  | Requirements | Ship A when A was asked | 1/1 | 1/1 | 1/1 |
+|  | Convergence | Finish, don't spin | 1/1 | 1/1 | 1/1 |
+| Judging | UI | Build the page to the mock | 1/1 | 1/1 | 0/1 |
+|  | Vision | Spot defects in screenshots | 1/1 | 1/1 | 1/1 |
+|  | Defense | Plug every hole in the validator | 0/2 · 2 NA | 0/2 · 1 NA | 0/2 · 2 NA |
+|  | Attribution | Pin defects to their root cause | 0/1 · 1 NA | 0/1 | 0/1 |
+|  | Review | Inspect someone else's work | 1/2 | 0/2 | 0/2 |
+|  | **Total** |  | **19'/24** | **19'/24** | **16'/24** |
 
-- **都拿满**：交付、需求、收敛、视觉。
-- **都没过**：防御、归因（一道都没过；NA 不算没过）。
-- **有差别**（数字依次对应上表各列）：编码 5/6 对 6/6 对 5/6、运维 6/6 对 6/6 对 5/6 · 1 NA、UI 1/1 对 1/1 对 0/1、审查 1/2 对 0/2 对 0/2。
+- **Full marks for all**: Delivery, Requirements, Convergence, Vision.
+- **None passed by any**: Defense, Attribution (not one pass on these axes; NA does not count as a fail).
+- **Where they differ** (numbers follow the table columns, left to right): Coding 5/6 vs 6/6 vs 5/6, Ops 6/6 vs 6/6 vs 5/6 · 1 NA, UI 1/1 vs 1/1 vs 0/1, Review 1/2 vs 0/2 vs 0/2.
 
-每格 = 过了几案/该轴共几案（案 = 一道计分题）。NA = 这一案作废或暂停计分，不算过也不算没过；总分带 `'` 表示其中有 NA。多数轴只有 1–2 案，差一案读数就变，所以别把小差距当结论。各列考试周次相同（W40），具体日期可能不同，数字是当期快照。
+Each cell = cases passed / cases on that axis (a case is one scored task). NA = the case was voided or put on hold; it counts as neither a pass nor a fail, and a total carrying `'` contains at least one NA. Most axes hold only 1–2 cases, so one case moves the reading: do not over-read small gaps. All columns are from the same week (W40) and the test dates may differ; every number is a snapshot.
 
 <!-- scoreboard:end -->
 
-## 这是什么
+## What this is
 
-- **AMBER** 是一套私有的实战题库：让模型像工程师一样做事（写功能、照规程运维、审查别人的交付、看截图找问题、应对中途改需求……），再按预设的检查项打分。规范与制题工具见 [getaskclaw/amber](https://github.com/getaskclaw/amber)，题目本身不公开。
-- **每期一篇** `results/YYYY-Www.md`：同一套题、同一套考试程序（harness，自动让模型做题并记分的工具），对目标模型考全部题目。报告写明题集规模与哈希（防偷换题目的指纹）、每题通过或失败和得分（我们自己的打分，算法不公开）、token 用量与成本（订阅渠道没有单价表，不报美元）、用时、环境信息，以及按证据写的文字结论。
-- 题目、判分器、答题全过程记录、中间产物**永不公开**（见下「发布纪律」）。
+- **AMBER** is a private real-work question bank: models do what an engineer does (build a feature, run an ops runbook, review someone else's delivery, find defects in screenshots, cope with requirements that change mid-task, and more), then get scored against preset checks. Spec and tooling: [getaskclaw/amber](https://github.com/getaskclaw/amber); the questions themselves stay private.
+- **One report per period**, `results/YYYY-Www.md`: same questions, same harness (the program that runs the exam and scores it), every model sits the full library. Each report gives suite size and hashes (a hash is the fingerprint that proves questions were not swapped), pass or fail and score per case (our own scoring; the algorithm stays private), token usage and cost (subscription lanes have no price sheet, so no dollar cost), time taken, environment details, and written verdicts based on the evidence.
+- Questions, graders, full answer logs and intermediate artifacts are **never published** (see "Publication rules").
 
-几个词：
+A few terms:
 
-- **案**：一道计分题。**NA**：这一案作废或暂停计分，不算过也不算没过。
-- **道**：同一个模型名在某一家渠道（卖场 / 接口）上的一次测评；同名模型在不同渠道可能是不同端点，所以跨仓比较一律带日期和档位。
-- **档（effort 档）**：给模型设定的思考力度。
+- **Case**: one scored task. **NA**: the case was voided or put on hold; it counts as neither a pass nor a fail.
+- **Lane**: one vendor's shop or API for a model name. The same model name on different lanes may be a different endpoint, so cross-repo comparisons always carry the date and band.
+- **Effort band**: the thinking-effort setting we give the model.
 
-## 姐妹仓
+## Sibling repos
 
 [amber-gpt](https://github.com/getaskclaw/amber-gpt) · [amber-kimi](https://github.com/getaskclaw/amber-kimi) · [amber-commandcode](https://github.com/getaskclaw/amber-commandcode) · [amber-nous](https://github.com/getaskclaw/amber-nous) · [amber-deepseek](https://github.com/getaskclaw/amber-deepseek) · [amber-doubao](https://github.com/getaskclaw/amber-doubao) · [amber-stepfun](https://github.com/getaskclaw/amber-stepfun) · [amber-ollama](https://github.com/getaskclaw/amber-ollama) · [amber-crof](https://github.com/getaskclaw/amber-crof) · [amber-opencode](https://github.com/getaskclaw/amber-opencode) · [amber-workbuddy](https://github.com/getaskclaw/amber-workbuddy) · [amber-goldenpotato](https://github.com/getaskclaw/amber-goldenpotato) · [amber-devin](https://github.com/getaskclaw/amber-devin)
 
-## 各期成绩
+## Results by issue
 
-- **2026-W40** — claude-sonnet-5-5 **19'/24**（19 胜 · 4 负 · 1 NA）· claude-opus-5-5 重考 **19'/24**（19 胜 · 2 负 · 3 NA；W39 首考为 17'/24）· claude-fable-5-1 **16'/24**（16 胜 · 5 负 · 3 NA）。动手类的题都强，防御、归因、审查是共同短板。本期的 NA 有两种原因：
-  1. 防御案 A-d511f9e8 在所有车道上暂停计分（考场判分有问题，见[更正声明](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.md)），三个模型各有这 1 个 NA；
-  2. 两次作答都撞到考场时间上限，按当时成文规则记 NA，不计负（Opus 2 案、Fable 1 案）。
+- **2026-W40** — claude-sonnet-5-5 **19'/24** (19 wins · 4 losses · 1 NA) · claude-opus-5-5 re-test **19'/24** (19 wins · 2 losses · 3 NA; W39 was 17'/24) · claude-fable-5-1 **16'/24** (16 wins · 5 losses · 3 NA). All three are strong on the hands-on tasks; defense, attribution and review are weak spots for all of them. The NA cells in this issue have two causes:
+  1. Defense case A-d511f9e8 is on hold on every lane (the exam room's grading had problems; see the [correction](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-02-a-d511f9e8.en.md)); each of the three models has this one NA;
+  2. Both tries ran out of the exam time limit, counted as NA under the rule we had at that time, not as losses (2 Opus cases, 1 Fable case).
 
-  此外，Fable 的品牌题 A-d9b79b46 曾因题面与考场不一致记 NA（挂起）；2026-10-07 题面修改后只重考了这一格（11/12，未过），改记负，不再是 NA。Opus、Sonnet 这一案的格子是旧题面下的成绩，不变。
+  In addition, Fable's brand case A-d9b79b46 had been NA (on hold) because the question text and the exam room did not match. After the question text was revised on 2026-10-07, only that cell was re-taken (11/12, a fail) and it is now a loss, no longer NA. The cells of Opus and Sonnet for this case were taken on the old text and do not change.
 
-  还有 Fable 的运维案 A-24bcf707：判分器对移除提交的检查比题面严，Fable 只挂这一项，这一格记 NA（挂起），不计负；Opus、Sonnet 这一案是过，不变。见[规范仓 2026-10-07 的更正](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.md)。
+  Also Fable's ops case A-24bcf707: the grader's removal-commit check was stricter than the prompt and Fable failed only that check, so the cell is NA (held) and not counted as a loss; Opus and Sonnet pass this case and do not change. See the [amber spec repo correction of 2026-10-07](https://github.com/getaskclaw/amber/blob/main/docs/corrections-2026-10-07-a-24bcf707.en.md).
 
-  见 [期文](results/2026-W40.md)。
-- **2026-W39** — claude-opus-5-5 **17'/24**：17 胜 · 6 负 · 1 案基建作废。' = contested（安全拒答挂起）或 invalid（基建相关（考场 harness 或判分环境）的挂起、作废或待重评），均不计胜负；所有含 NA 的道都带撇号，包括冻结展示行；挂起不表示死因已定。见 [更正](results/2026-W39-correction.md) · [原刊](results/2026-W39.md)。
+  See [the issue](results/2026-W40.en.md).
+- **2026-W39** — claude-opus-5-5 **17'/24**: 17 wins · 6 losses · 1 case void due to infrastructure. ' = contested (held for safety refusal) or invalid (infrastructure-related (test harness or scoring environment) cases: held, void or awaiting re-scoring); neither counts as a win or a loss. Every lane with NA carries an apostrophe, including frozen display rows; a hold does not settle the cause. [Correction](results/2026-W39-correction.en.md) · [original report](results/2026-W39.en.md).
 
-W39 的十轴完成度画像（claude-opus-5-5 对 k3）在 [更正](results/2026-W39-correction.md) 页内。
+The W39 ten-axis completion profile (claude-opus-5-5 vs k3) is on the [correction](results/2026-W39-correction.en.md) page.
 
-## 发布纪律（红线）
+## Publication rules (hard lines)
 
-1. 只发：分数与聚合、token 用量与成本、速度、定性裁决。
-2. 永不发：题目内容、oracle / 判分器、transcript、考生工作区、任何能复原题面的中间产物。
-3. 每期必钉：模型 ID、effort 档、日期（UTC）、harness 版本、每案内容哈希（bundle_sha，每题内容的哈希指纹）。哈希用于对照 [amber](https://github.com/getaskclaw/amber) 的公开哈希清单，自证题集未变。
-4. 案号与题目结构属私有面：公开结果里案例只用稳定别名（A-xxxxxxxx，哈希派生）+ bundle 哈希作句柄；内部案号、变体名、题目描述永不出现。
-5. 基调：这是社区实测，不是对厂商的攻击。数据说话，措辞克制。
+1. Publish only: scores and aggregates, token usage and cost, speed, qualitative verdicts.
+2. Never publish: question content, oracles/graders, transcripts, candidate workspaces, or any intermediate artifact that could reconstruct a question.
+3. Every issue pins: model ID, effort band, date (UTC), harness version, per-case content hash (bundle_sha), cross-checked against the public hash index in [amber](https://github.com/getaskclaw/amber).
+4. Case numbers and suite structure are private: public results use stable aliases (A-xxxxxxxx, hash-derived) plus bundle hashes only; internal case IDs, variant names, and question descriptions never appear.
+5. Tone: this is community measurement, not an attack on vendors. Data talks; wording stays restrained.
 
-## 一个方法论前提
+## One methodological note
 
-同名模型、同 provider，两次跑也可能不同分——推理参数、负载、服务端版本都在漂。所以这里的一切结论都带日期与档位，且定期重测。单日数字是快照，不是定律。
+Same model, same provider, two runs can still score differently — sampling settings, load, and server-side versions all drift. Every claim here carries a date and a band, and we re-test regularly. A single day's number is a snapshot, not a law.

@@ -22,7 +22,7 @@
 
 <!-- scoreboard:start -->
 
-![amber-claude 成绩一览：claude-opus-5-5、claude-sonnet-5-5、claude-fable-5-1 逐轴过案数](results/assets/scoreboard.zh.png?v=20261007c)
+![amber-claude 成绩一览：claude-opus-5-5、claude-sonnet-5-5、claude-fable-5-1 逐轴过案数](results/assets/scoreboard.zh.png?v=20261009)
 
 | 大类 | 轴 | 考什么 | claude-opus-5-5 · [W40](results/2026-W40.md) | claude-sonnet-5-5 · [W40](results/2026-W40.md) | claude-fable-5-1 · [W40](results/2026-W40.md) |
 |---|---|---|:-:|:-:|:-:|

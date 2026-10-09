@@ -22,7 +22,7 @@ We give Anthropic's Claude models the same **private**, real-work exam (a questi
 
 <!-- scoreboard:start -->
 
-![amber-claude scoreboard: cases passed per axis for claude-opus-5-5, claude-sonnet-5-5, claude-fable-5-1](results/assets/scoreboard.en.png?v=20261007c)
+![amber-claude scoreboard: cases passed per axis for claude-opus-5-5, claude-sonnet-5-5, claude-fable-5-1](results/assets/scoreboard.en.png?v=20261009)
 
 | Group | Axis | What it tests | claude-opus-5-5 · [W40](results/2026-W40.en.md) | claude-sonnet-5-5 · [W40](results/2026-W40.en.md) | claude-fable-5-1 · [W40](results/2026-W40.en.md) |
 |---|---|---|:-:|:-:|:-:|
@@ -39,10 +39,10 @@ We give Anthropic's Claude models the same **private**, real-work exam (a questi
 |  | **Total** |  | **19'/24** | **19'/24** | **16'/24** |
 
 - **Full marks for all**: Delivery, Requirements, Convergence, Vision.
-- **Passed by none**: Defense, Attribution (not one pass on these axes; NA does not count as a fail).
+- **None passed by any**: Defense, Attribution (not one pass on these axes; NA does not count as a fail).
 - **Where they differ** (numbers follow the table columns, left to right): Coding 5/6 vs 6/6 vs 5/6, Ops 6/6 vs 6/6 vs 5/6 · 1 NA, UI 1/1 vs 1/1 vs 0/1, Review 1/2 · 1 NA vs 0/2 · 1 NA vs 0/2 · 1 NA.
 
-Each cell = cases passed / cases on that axis (a case is one scored task). NA = the case was voided or put on hold; it counts as neither a pass nor a fail, and a total carrying `'` has at least one NA. Most axes hold only 1–2 cases, so one case moves the reading: do not over-read small gaps. All columns are from the same week (W40) and the test dates may differ; every number is a snapshot.
+Each cell = cases passed / cases on that axis (a case is one scored task). NA = the case was voided or put on hold; it counts as neither a pass nor a fail, and a total carrying `'` contains at least one NA. Most axes hold only 1–2 cases, so one case moves the reading: do not over-read small gaps. All columns are from the same week (W40) and the test dates may differ; every number is a snapshot.
 
 <!-- scoreboard:end -->
 
